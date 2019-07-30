@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+
+  <title>Star Wars Characters</title>
+
+  <!-- Custom Styles -->
+  <link href="css/style.css" rel="stylesheet" />
+
+<body>
+  <div class="name">
+    <h1>Star Wars Characters</h1>
+    <p>Input the number of character you want information for.</p>
+    <form>
+      <input type="interger" id="number" placeholder="Character number">
+      <input type="submit" id="btn-submit" value="Submit">
+    </form>
+    <input type="text" id="textbox" placeholder="Response Here">
+  </div>
+
+  <script>
+    const form = {
+      TheNumber: document.getElementById('number'),
+      submit: document.getElementById("btn-submit")
+    };
+
+    form.submit.addEventListener('click', () => {
+      event.preventDefault();
+
+      const requestData = form.TheNumber.value;
+
+
+      fetch('https://swapi.co/api/people/' + requestData)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (myJson) {
+          console.log(JSON.stringify(myJson));
+          document.getElementById('textbox').value = (JSON.stringify(myJson));
+
+        })
+    });
+
+  </script>
+
+</body>
+
+</html>
