@@ -11,6 +11,6 @@
 ### Installation
 1. Clone git Repository
 2. To run open your terminal and navigate to project root where pom.xml is located and run the command **:mvn spring-boot:run**
-3.Navigate to http://localhost:8080/index.html
+3. Navigate to http://localhost:8080/index.html
 
 Input a number from 1 through 87 to get a response.
